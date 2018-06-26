@@ -1,4 +1,4 @@
-public class BeerStall extends Stalls {
+public class BeerStall extends Stalls implements ISecurity {
 
 
     private int ageRestriction;
@@ -10,5 +10,9 @@ public class BeerStall extends Stalls {
 
     public int getAgeRestriction() {
         return ageRestriction;
+    }
+
+    public boolean isAllowedTo(Visitor visitor) {
+        return visitor.getAge() > this.ageRestriction;
     }
 }

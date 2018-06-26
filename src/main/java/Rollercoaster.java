@@ -1,6 +1,6 @@
 
 
-public class Rollercoaster extends Attractions {
+public class Rollercoaster extends Attractions implements ITicketed, ISecurity {
 
     ;
 
@@ -9,7 +9,13 @@ public class Rollercoaster extends Attractions {
 
     }
 
-    public boolean visitorCanRide(Visitor visitor, Rollercoaster rollercoaster) {
-        return visitor.getHeight() > rollercoaster.getHeightRestriction();
+
+    public int defaultPrice() {
+        return 5;
+    }
+
+
+    public boolean isAllowedTo(Visitor visitor) {
+        return visitor.getHeight() > this.getHeightRestriction();
     }
 }

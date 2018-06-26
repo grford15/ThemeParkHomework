@@ -8,6 +8,7 @@ public abstract class Attractions {
         this.heightRestriction = heightRestriction;
     }
 
+
     public String getName() {
         return name;
     }
